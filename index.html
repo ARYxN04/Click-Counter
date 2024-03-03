@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>assignment_1</title>
+</head>
+<body>
+    <header>
+        <button onclick="showPopup()" id="buttonConnect">Connect wallet</button>
+        <div id="usernamePopup" class="overlay">
+            <div class="popup">
+                <label for="username">Enter your name:</label>
+                <input type="text" id="username" name="username">
+                <br>
+                <br>
+                <button onclick="saveUsername()">Save</button>
+                <button onclick="hidePopup()">Cancel</button>
+            </div>
+        </div>
+        <script>
+            // Function to display the popup
+            function showPopup() {
+                document.getElementById('usernamePopup').style.display = 'flex';
+            }
+    
+            // Function to hide the popup
+            function hidePopup() {
+                document.getElementById('usernamePopup').style.display = 'none';
+            }
+    
+            // Function to save the entered username
+            function saveUsername() {
+                var username = document.getElementById('username').value;
+                document.getElementById('buttonConnect').textContent = username;
+                hidePopup();
+
+                counter =0;
+                countClick.text = counter;
+            }
+    
+            // Show the popup after the website loads
+            window.onload = function() {
+                showPopup();
+            };
+            </script>
+    </header>
+    <main>
+        <br>
+        <!-- <h1 style=" color:#600090"></h1> -->
+        <button id="buttonClick">CLICK HERE</button>
+        <div id= "countBox">
+            <div id="countTag">CLICK COUNT:</div>
+            <div id="count">00</div>
+        </div>
+        
+        
+
+        <script>
+            var buttonClick = document.getElementById('buttonClick');
+            var countClick = document.getElementById('count');
+            var counter = 0;
+
+            function updateCounter() {
+                counter++;
+                countClick.textContent = counter;
+            }
+
+            buttonClick.addEventListener('click',updateCounter);
+        </script>
+        <div id="leaderboard" >
+            <h2>LEADERBOARD</h2>
+            <ol id = "list">
+                <li></li>
+
+            </ol>
+        </div>
+    </main>
+    
+</body>
+</html>
